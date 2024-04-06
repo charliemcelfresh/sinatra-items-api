@@ -16,7 +16,7 @@ class MyApp < Sinatra::Base
     DB = Sequel.connect(ENV['DB_URL'])
 
     get '/api/v1/items' do
-        limit, offset = params[:limit].to_i || 10, params[:offset].to_i || 0
+        limit, offset = params[:limit].to_i || 10   , params[:offset].to_i || 0
         statement = %q(
             SELECT
                 i.id, i.name, i.created_at, i.updated_at
